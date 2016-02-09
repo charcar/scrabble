@@ -16,10 +16,14 @@ public class App {
           totalScore = totalScore + 1;
         } else if (eachChar == 'd' || eachChar == 'g') {
           totalScore = totalScore + 2;
-        }
-       } return totalScore;
-     }
+        } else if (eachChar == 'b' || eachChar == 'c' || eachChar == 'm' || eachChar == 'p') {
+        totalScore = totalScore + 3;
+        } else if (eachChar == 'f' || eachChar == 'h' || eachChar == 'v' ||           eachChar == 'w' || eachChar == 'y') {
+        totalScore = totalScore + 4;
+       }
+     } return totalScore;
     }
+  }
 
 
 // public static String leetspeak(String normalInput) {

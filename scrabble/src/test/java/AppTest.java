@@ -9,10 +9,25 @@ public class AppTest {
     Integer score = 1;
     assertEquals(score, app.scrabbleScore("a"));
   }
+
   @Test
   public void scrabbleScore_returnsAScrabbleScoreForALetter_2() {
     App app = new App();
     Integer score = 2;
     assertEquals(score, app.scrabbleScore("d"));
-}
+  }
+
+  @Test
+  public void scrabbleScore_returnsAScrabbleScoreForALetter_3() {
+    App app = new App();
+    Integer score = 3;
+    assertEquals(score, app.scrabbleScore("b"));
+  }
+
+  @Test
+  public void scrabbleScore_returnsAScrabbleScoreForALetter_4() {
+    App app = new App();
+    Integer score = 4;
+    assertEquals(score, app.scrabbleScore("f"));
+  }
 }

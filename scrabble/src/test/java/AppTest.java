@@ -30,4 +30,25 @@ public class AppTest {
     Integer score = 4;
     assertEquals(score, app.scrabbleScore("f"));
   }
+
+  @Test
+  public void scrabbleScore_returnsAScrabbleScoreForALetter_5() {
+    App app = new App();
+    Integer score = 5;
+    assertEquals(score, app.scrabbleScore("k"));
+  }
+
+  @Test
+  public void scrabbleScore_returnsAScrabbleScoreForALetter_8() {
+    App app = new App();
+    Integer score = 8;
+    assertEquals(score, app.scrabbleScore("j"));
+  }
+  
+  @Test
+  public void scrabbleScore_returnsAScrabbleScoreForALetter_10() {
+    App app = new App();
+    Integer score = 10;
+    assertEquals(score, app.scrabbleScore("q"));
+  }
 }

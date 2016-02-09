@@ -1,12 +1,30 @@
 import java.io.Console;
 import java.util.HashMap;
 
+import spark.ModelAndView;
+import spark.template.velocity.VelocityTemplateEngine;
+
+import static spark.Spark.*;
+
 public class App {
   public static void main(String[] args) {
-    Console myConsole = System.console();
-    System.out.println("Enter a Word and we'll calculate the Scrabble Score.");
-    String userString = myConsole.readLine();
-    System.out.println(scrabbleScore(userString));
+    String layout = "templates/layout.vtl";
+
+    get("/", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/home.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/detector", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/detector.vtl");
+
+      String word = request.queryParams("word");
+      Integer scrabbleScore = scrabbleScore(word);
+      model.put("scrabbleScore", scrabbleScore);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 
     public static Integer scrabbleScore(String userString) {

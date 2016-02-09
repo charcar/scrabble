@@ -3,13 +3,13 @@ import java.util.HashMap;
 
 public class App {
   public static void main(String[] args) {
-    // Console myConsole = System.console();
-    // System.out.println("Enter a Word and we'll calculate the Scrabble Score.");
-    // String userString = myConsole.readLine();
-    // System.out.println(leetspeak(userString));
+    Console myConsole = System.console();
+    System.out.println("Enter a Word and we'll calculate the Scrabble Score.");
+    String userString = myConsole.readLine();
+    System.out.println(scrabbleScore(userString));
   }
 
-    public Integer scrabbleScore(String userString) {
+    public static Integer scrabbleScore(String userString) {
       char[] userCharArray = userString.toLowerCase().toCharArray();
       Integer totalScore = 0;
 
